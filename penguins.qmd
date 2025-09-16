@@ -1,0 +1,28 @@
+---
+title: "penguins"
+format: html
+editor: visual
+---
+
+## **Palmer Penguins**
+
+The **Palmer Penguins dataset** provides measurements of three penguin species (*Adélie*, *Chinstrap*, and *Gentoo*) collected from the Palmer Archipelago in Antarctica. It includes biological data such as body mass, flipper length, bill length, bill depth, sex, and the island where the penguins were observed. The dataset isdemonstrating data visualization, modeling, and exploratory data analysis.
+
+```{r}
+library(ggplot2)
+library(palmerpenguins)
+
+# Basic scatter plot
+ggplot(penguins, aes(x = flipper_length_mm, 
+                     y = body_mass_g, 
+                     color = species)) +
+  geom_point(size = 3, alpha = 0.7, na.rm = TRUE) +
+  labs(
+    title = "Palmer Penguins: Body Mass vs Flipper Length",
+    x = "Flipper Length (mm)",
+    y = "Body Mass (g)",
+    color = "Species"
+  ) +
+  theme_minimal()
+
+```
